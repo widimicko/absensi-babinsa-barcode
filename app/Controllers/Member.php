@@ -85,7 +85,16 @@ class Member extends BaseController
       return redirect()->to('/dashboard/members')->with('success', 'Data anggota berhasil diperbaharui');
     }
 
-    // public function destroy() {
-    //   return view('dashboard/members/create');
-    // }
+    public function destroy($id) {
+      $member = $this->memberModel->find($id);
+      $filePath = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR .'image/member/' . $member['image'];
+
+      if (file_exists($filePath) && $member['image'] != 'empty_image.jpg') {
+        unlink('image/member/'. $member['image']);
+      }
+      
+      $this->memberModel->delete($id);
+
+      return redirect()->to('/dashboard/members')->with('success', 'Anggota "'. $member['name'] .'" berhasil dihapus');
+    }
 }
