@@ -17,10 +17,10 @@
   <div class="my-3">
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <a href="<?= base_url('/absen/masuk') ?>" class="btn btn-primary"><i class="bi bi-box-arrow-in-right"></i> Masuk</a>
+        <a href="<?= base_url('/absence/in') ?>" class="btn btn-primary"><i class="bi bi-box-arrow-in-right"></i> Masuk</a>
       </div>
       <div class="col-md-6">
-        <a href="<?= base_url('/absen/pulang') ?>" class="btn btn-info"><i class="bi bi-box-arrow-right"></i> Pulang</a>
+        <a href="<?= base_url('/absence/out') ?>" class="btn btn-info"><i class="bi bi-box-arrow-right"></i> Pulang</a>
       </div>
     </div>
   </div>

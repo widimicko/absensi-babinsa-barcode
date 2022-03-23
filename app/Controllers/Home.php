@@ -9,11 +9,19 @@ class Home extends BaseController
         return view('home/index');
     }
 
-    public function masuk() {
-        return view('home/absen_masuk');
+    public function in() {
+        return view('home/absence_in');
     }
 
-    public function pulang() {
-        return view('home/absen_pulang');
+    public function out() {
+        return view('home/absence_out');
+    }
+
+    public function absenceIn() {
+        
+    }
+
+    public function absenceOut() {
+        
     }
 }

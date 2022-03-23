@@ -9,6 +9,7 @@
         <?= $message ?>
     </div>
   <?php endif ?>
+  
   <form action="<?= base_url('/login') ?>" method="post">
     <?= csrf_field() ?>
     <input type="email" name="email" class="form-control">

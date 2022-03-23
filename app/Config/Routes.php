@@ -32,13 +32,26 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/absen/masuk', 'Home::masuk');
-$routes->get('/absen/pulang', 'Home::pulang');
+$routes->get('/absence/in', 'Home::in');
+$routes->get('/absence/out', 'Home::out');
+$routes->post('/absence/in', 'Home::absenceIn');
+$routes->post('/absence/out', 'Home::absenceOut');
 
 
 $routes->get('/login', 'Auth::login');
 $routes->post('/login', 'Auth::authenticate');
 $routes->get('/logout', 'Auth::logout');
+
+$routes->get('/dashboard', 'Member::index');
+
+// ! ============= Member Resource ============
+$routes->get('/dashboard/members', 'Member::index');
+$routes->get('/dashboard/members/create', 'Member::create');
+$routes->post('/dashboard/members/store', 'Member::store');
+$routes->get('/dashboard/members/edit/(:num)', 'Member::edit/$1');
+$routes->post('/dashboard/members/update/(:num)', 'Member::update/$1');
+$routes->get('/dashboard/members/destroy/(:num)', 'Member::destroy/$1');
+
 
 
 /*

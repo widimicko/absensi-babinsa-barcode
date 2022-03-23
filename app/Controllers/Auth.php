@@ -29,13 +29,13 @@ class Auth extends BaseController
       if(!$user){
         return redirect()->to('/login')->with('failed', 'Akun tidak ditemukan');
       } else{
-        if(!password_verify($user['password'], $request['password'])){
+        if(!password_verify($request['password'], $user['password'])){
           return redirect()->to('/login')->with('failed', 'Password salah');
         } else {
           $loginSession = [
             'isLogin' => true,
-            'username' => $user['username'],
-            'role' => $user['role']
+            'email' => $user['email'],
+            'name' => $user['name'],
           ];
 
           $this->session->set($loginSession);
