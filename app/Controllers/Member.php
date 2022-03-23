@@ -45,13 +45,45 @@ class Member extends BaseController
       return redirect()->to('/dashboard/members')->with('success', 'Data anggota baru berhasil ditambahkan');
     }
 
-    public function edit() {
-      return view('dashboard/members/edit');
+    public function edit($id) {
+      $member = $this->memberModel->find($id);
+      return view('dashboard/members/edit', [
+        'member' => $member
+      ]);
     }
 
-    // public function update() {
-    //   return view('dashboard/members/create');
-    // }
+    public function update($id) {
+      if(!$this->validate([
+        'name' => 'required',
+        'image' => 'is_image[image]|mime_in[image,image/jpg,image/jpeg,image/png]',
+        'birthdate' => 'required',
+        'rank' => 'required',
+      ])) {
+        return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+      }
+
+      $member = $this->memberModel->find($id);
+
+      $isFileUploaded = null;
+      $uploadedFile = $this->request->getFile('image');
+
+      if ($uploadedFile->getError() == 4) {
+        $isFileUploaded = false;
+      } elseif ($uploadedFile->getError() != 4) {
+        $isFileUploaded = true;
+        unlink('image/member/'. $member['image']);
+        $uploadedFile->move('image/member/');
+      }
+
+      $this->memberModel->update($id, [
+        'name' => $this->request->getVar('name'),
+        'rank' => $this->request->getVar('rank'),
+        'birthdate' => $this->request->getVar('birthdate'),
+        'image' => $isFileUploaded ? $uploadedFile->getClientName() : $member['image']
+      ]);
+
+      return redirect()->to('/dashboard/members')->with('success', 'Data anggota berhasil diperbaharui');
+    }
 
     // public function destroy() {
     //   return view('dashboard/members/create');

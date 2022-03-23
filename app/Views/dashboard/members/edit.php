@@ -3,7 +3,7 @@
 <?= $this->section('main') ?>
 
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Halaman Tambah Anggota</h1>
+    <h1 class="h2">Halaman Edit Anggota</h1>
   </div>
 
   <?php if($message = session()->getFlashData('failed')) : ?>
@@ -18,18 +18,18 @@
 
   <div class="col-lg-6 mb-5">
     <div class="card rounded shadow p-3">
-      <form action="<?= base_url('/dashboard/members/store') ?>" method="post" enctype="multipart/form-data">
+      <form action="<?= base_url('/dashboard/members/update/'. $member['id']) ?>" method="post" enctype="multipart/form-data">
         <?= csrf_field() ?>
         <div class="mb-3">
           <label class="form-label">Nama</label>
-          <input required type="text" name="name" class="form-control" value="<?= old('name') ?>">
+          <input required type="text" name="name" class="form-control" value="<?= old('name', $member['name']) ?>">
           <div class="invalid-feedback">
             <?= session('errors.name') ?>
           </div>
         </div>
         <div class="mb-3">
           <label class="form-label">Foto</label>
-          <img class="img-preview img-fluid mb-3 col-sm-5">
+          <img src="<?= base_url('image/member/'. $member['image']) ?>" class="img-preview d-block img-fluid mb-3 col-sm-5">
           <input type="file" name="image" id="image" class="form-control" accept="image/*" onchange="previewImage()">
           <div class="invalid-feedback">
             <?= session('errors.image') ?>
@@ -39,25 +39,25 @@
           <label class="form-label">Pangkat</label>
           <select name="rank" class="form-select">
           <option value="Pelda"
-            <?= old('rank') == 'Pelda' ? 'selected' : '' ?>
+            <?= old('rank', $member['rank']) == 'Pelda' ? 'selected' : '' ?>
             >Pelda</option>
             <option value="Serma"
-            <?= old('rank') == 'Serma' ? 'selected' : '' ?>
+            <?= old('rank', $member['rank']) == 'Serma' ? 'selected' : '' ?>
             >Serma</option>
             <option value="Sertu"
-            <?= old('rank') == 'Sertu' ? 'selected' : '' ?>
+            <?= old('rank', $member['rank']) == 'Sertu' ? 'selected' : '' ?>
             >Sertu</option>
             <option value="Serda"
-            <?= old('rank') == 'Serda' ? 'selected' : '' ?>
+            <?= old('rank', $member['rank']) == 'Serda' ? 'selected' : '' ?>
             >Serda</option>
             <option value="Serka"
-            <?= old('rank') == 'Serka' ? 'selected' : '' ?>
+            <?= old('rank', $member['rank']) == 'Serka' ? 'selected' : '' ?>
             >Serka</option>
             <option value="Koptu"
-            <?= old('rank') == 'Koptu' ? 'selected' : '' ?>
+            <?= old('rank', $member['rank']) == 'Koptu' ? 'selected' : '' ?>
             >Koptu</option>
             <option value="Kopda"
-            <?= old('rank') == 'Kopda' ? 'selected' : '' ?>
+            <?= old('rank', $member['rank']) == 'Kopda' ? 'selected' : '' ?>
             >Kopda</option>
           </select>
           <div class="invalid-feedback">
@@ -66,7 +66,7 @@
         </div>
         <div class="mb-3">
           <label class="form-label">Tanggal Lahir</label>
-          <input required type="date" name="birthdate"class="form-control" value="<?= old('birthdate') ?>">
+          <input required type="date" name="birthdate"class="form-control" value="<?= old('birthdate', $member['birthdate']) ?>">
           <div class="invalid-feedback">
             <?= session('errors.birthdate') ?>
           </div>
