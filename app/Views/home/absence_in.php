@@ -26,7 +26,7 @@
           <p>Absen Masuk</p>
         </div>
         <div id="scanner" class="mt-3"></div>
-        <input type="text" name="credential" id="credential" class="form-control mt-3" placeholder="Scan barcode" autofocus>
+        <input type="text" name="credential" id="credentialInput" class="form-control mt-3" placeholder="Scan barcode" readonly autofocus>
         <a href="<?= base_url('/') ?>" class="text-center"><i class="bi bi-arrow-left"></i> Kembali ke Home</a>
       </div>
       <div class="row mt-4">

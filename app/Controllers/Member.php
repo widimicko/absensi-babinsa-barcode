@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use Dompdf\Dompdf;
+
 use App\Models\MemberModel;
 
 class Member extends BaseController
@@ -15,6 +17,37 @@ class Member extends BaseController
       return view('dashboard/members/members', [
         'members' => $this->memberModel->findAll()
       ]);
+    }
+
+    public function show($id) {
+      $member = $this->memberModel->find($id);
+      $dompdf = new Dompdf();
+      // set options to dompdf
+      $options = $dompdf->getOptions();
+      $options->isRemoteEnabled(true);
+      $options->isHtml5ParserEnabled(true);
+      $options->setChroot(FCPATH);
+
+      // Set True for Debugging Mode
+      $options->setDebugCss(true);
+      $options->setDebugLayout(true);
+      $options->setDebugLayoutBlocks(true);
+      $options->setDebugLayoutInline(true);
+      $options->setDebugLayoutLines(true);
+      $options->setDebugLayoutPaddingBox(true);
+      $options->setDebugPng(true);
+
+      $dompdf->setOptions($options);
+
+      $dompdf->loadHtml(view('pdf/member_card', [
+        'member' => $member
+      ]));
+
+      $dompdf->setPaper('A5', 'potrait');
+
+      $dompdf->render();
+
+      $dompdf->stream($member['name'].'.pdf');
     }
 
     public function create() {

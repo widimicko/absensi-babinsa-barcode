@@ -46,6 +46,7 @@
               <td><?= $member['created_at'] ?></td>
               <td><?= $member['updated_at'] ?></td>
               <td>
+                <a href="<?= base_url('/dashboard/members/show/'. $member['id']) ?>" class="btn btn-info text-white"><i class="bi bi-printer"></i> Print</a>
                 <a href="<?= base_url('/dashboard/members/edit/'. $member['id']) ?>" class="btn btn-warning text-white"><i class="bi bi-pencil"></i> Ubah</a>
                 <a href="<?= base_url('/dashboard/members/destroy/'. $member['id']) ?>" class="btn btn-danger text-white"><i class="bi bi-trash"></i> Hapus</a>
               </td>

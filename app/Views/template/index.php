@@ -27,10 +27,9 @@
     <script>
       function onScanSuccess(decodedText, decodedResult) {
         console.log(`Code matched = ${decodedText}`, decodedResult);
-      }
+        const credentialInput = document.getElementById('credentialInput')
 
-      function onScanFailure(error) {
-        console.warn(`Code scan error = ${error}`);
+        credentialInput.value = decodedText
       }
 
       if(document.getElementById('scanner')) {
@@ -38,7 +37,7 @@
           "scanner",
           { fps: 10, qrbox: {width: 250, height: 250} },
           /* verbose= */ false);
-        html5QrcodeScanner.render(onScanSuccess, onScanFailure);
+        html5QrcodeScanner.render(onScanSuccess);
       }
     </script>
   </body>
