@@ -1,0 +1,39 @@
+body {
+	text-align:center;
+	-webkit-transition-duration: .1s; 
+	-moz-transition-duration: .1s; 
+	-o-transition-duration: .1s; 
+	-transition-duration: .1s;      
+	animation-timing-function: ease-in-out; 
+	-webkit-animation-timing-function: ease-in-out;	
+	text-rendering: optimizeLegibility;
+	-webkit-text-rendering: optimizeLegibility;
+	-moz-text-rendering: optimizeLegibility;
+}
+
+.container{
+	width:100%;
+	display:inline-block;
+	vertical-align:middle;
+	text-align:center;
+}
+
+.clock{
+	display:inline;
+}
+
+#set{
+	text-decoration:none;
+	padding:5px 10px 5px 10px;
+	color:#FFF;
+	background-color:#F3A829;
+	border-radius:5px;
+}
+
+#set:hover{
+	text-decoration:none;
+	padding:4px 9px 4px 9px;
+	color:#fefefe;
+	background-color:#F3A829;
+	border-radius:5px;
+}
