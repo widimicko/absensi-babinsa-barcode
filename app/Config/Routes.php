@@ -35,6 +35,12 @@ $routes->get('/', 'Home::index');
 $routes->get('/absen/masuk', 'Home::masuk');
 $routes->get('/absen/pulang', 'Home::pulang');
 
+
+$routes->get('/login', 'Auth::login');
+$routes->post('/login', 'Auth::authenticate');
+$routes->get('/logout', 'Auth::logout');
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
