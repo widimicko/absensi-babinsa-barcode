@@ -5,21 +5,27 @@ namespace App\Controllers;
 use Dompdf\Dompdf;
 
 use App\Models\MemberModel;
+use App\Controllers\Auth;
 
 class Member extends BaseController
 {
     public function __construct()
     {
         $this->memberModel = new MemberModel();
+        $this->auth = new Auth();
     }
 
     public function index() {
+      if(!$this->auth->isLogin()){
+        return redirect()->to('/login');
+      }
+
       return view('dashboard/members/members', [
         'members' => $this->memberModel->findAll()
       ]);
     }
 
-    public function show($id) {
+    public function print($id) {
       $member = $this->memberModel->find($id);
       $dompdf = new Dompdf();
       // set options to dompdf
@@ -29,13 +35,13 @@ class Member extends BaseController
       $options->setChroot(FCPATH);
 
       // Set True for Debugging Mode
-      $options->setDebugCss(true);
-      $options->setDebugLayout(true);
-      $options->setDebugLayoutBlocks(true);
-      $options->setDebugLayoutInline(true);
-      $options->setDebugLayoutLines(true);
-      $options->setDebugLayoutPaddingBox(true);
-      $options->setDebugPng(true);
+      // $options->setDebugCss(true);
+      // $options->setDebugLayout(true);
+      // $options->setDebugLayoutBlocks(true);
+      // $options->setDebugLayoutInline(true);
+      // $options->setDebugLayoutLines(true);
+      // $options->setDebugLayoutPaddingBox(true);
+      // $options->setDebugPng(true);
 
       $dompdf->setOptions($options);
 
@@ -51,10 +57,18 @@ class Member extends BaseController
     }
 
     public function create() {
+      if(!$this->auth->isLogin()){
+        return redirect()->to('/login');
+      }
+
       return view('dashboard/members/create');
     }
 
     public function store() {
+      if(!$this->auth->isLogin()){
+        return redirect()->to('/login');
+      }
+
       if(!$this->validate([
         'name' => 'required',
         'image' => 'is_image[image]|mime_in[image,image/jpg,image/jpeg,image/png]',
@@ -79,6 +93,10 @@ class Member extends BaseController
     }
 
     public function edit($id) {
+      if(!$this->auth->isLogin()){
+        return redirect()->to('/login');
+      }
+
       $member = $this->memberModel->find($id);
       return view('dashboard/members/edit', [
         'member' => $member
@@ -86,6 +104,10 @@ class Member extends BaseController
     }
 
     public function update($id) {
+      if(!$this->auth->isLogin()){
+        return redirect()->to('/login');
+      }
+
       if(!$this->validate([
         'name' => 'required',
         'image' => 'is_image[image]|mime_in[image,image/jpg,image/jpeg,image/png]',
@@ -119,6 +141,10 @@ class Member extends BaseController
     }
 
     public function destroy($id) {
+      if(!$this->auth->isLogin()){
+        return redirect()->to('/login');
+      }
+      
       $member = $this->memberModel->find($id);
       $filePath = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR .'image/member/' . $member['image'];
 

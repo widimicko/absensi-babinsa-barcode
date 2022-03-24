@@ -1,0 +1,8 @@
+TODO:
+
+ - fix member card view, make print all
+ - users crud
+ - absences crud & report
+ - api to absences
+
+ 

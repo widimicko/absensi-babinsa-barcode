@@ -12,9 +12,15 @@ class Auth extends BaseController
         $this->session = session();
     }
 
+    public function isLogin() {
+      return $this->session->has('isLogin');
+    }
+
     public function login()
     {
-      if($this->session->has('isLogin')){
+      $isLogin = $this->isLogin();
+
+      if($isLogin){
         return redirect()->to('/dashboard');
       }
 

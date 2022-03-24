@@ -7,16 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .page_break { page-break-before: always; }
-    .text-center { text-align: center; }
+    .page-break {
+      page-break-before: always;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .content-center {
+      margin: 0 auto;
+      width: 50%;
+    }
   </style>
 </head>
 <body>
-  <h1 class="text-center">Koramil 0827/18 Kangean</h1>
-  <img class="text-center" src="image/member/<?= $member['image'] ?>" height="100px">
-  <h3 class="text-center"><?= $member['name'] ?></h3>
-  <h4 class="text-center"><?= $member['rank'] ?></h4>
-
-  <?php echo '<img src="'.(new QRCode)->render($member['credential']).'" class="text-center" alt="QR Code" />'; ?>
+  <h1 class="text-center"><?= $member['name'] ?></h1>
+  <h3 class="text-center"><?= $member['rank'] ?></h3>
+  <div class="content-center">
+    <img src="image/member/<?= $member['image'] ?>" style="height: 200px; width: 100%;"><br>
+    <?php echo '<img src="'.(new QRCode)->render($member['credential']).'" style="margin: 0 auto;" alt="QR Code" />'; ?>
+  </div>
+  <h3 class="text-center">Koramil 0827/18 Kangean</h3>
 </body>
 </html>
