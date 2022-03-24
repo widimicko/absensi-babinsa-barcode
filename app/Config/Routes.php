@@ -55,11 +55,17 @@ $routes->get('/dashboard/members/destroy/(:num)', 'Member::destroy/$1');
 
 // ! ============= User Resource ============
 $routes->get('/dashboard/users', 'User::index');
-$routes->get('/dashboard/users/create', 'User::create');
 $routes->post('/dashboard/users/store', 'User::store');
-$routes->get('/dashboard/users/edit/(:num)', 'User::edit/$1');
 $routes->post('/dashboard/users/update/(:num)', 'User::update/$1');
 $routes->get('/dashboard/users/destroy/(:num)', 'User::destroy/$1');
+
+// ! ============= Absence Resource ============
+$routes->get('/dashboard/absences', 'Absence::index');
+// $routes->get('/dashboard/absences/create', 'Absence:create');
+// $routes->post('/dashboard/absences/store', 'Absence:store');
+// $routes->get('/dashboard/absences/edit/(:num)', 'Absence:edit/$1');
+// $routes->post('/dashboard/absences/update/(:num)', 'Absence:update/$1');
+// $routes->get('/dashboard/absences/destroy/(:num)', 'Absence:destroy/$1');
 
 
 
