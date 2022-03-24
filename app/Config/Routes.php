@@ -53,6 +53,14 @@ $routes->get('/dashboard/members/edit/(:num)', 'Member::edit/$1');
 $routes->post('/dashboard/members/update/(:num)', 'Member::update/$1');
 $routes->get('/dashboard/members/destroy/(:num)', 'Member::destroy/$1');
 
+// ! ============= User Resource ============
+$routes->get('/dashboard/users', 'User::index');
+$routes->get('/dashboard/users/create', 'User::create');
+$routes->post('/dashboard/users/store', 'User::store');
+$routes->get('/dashboard/users/edit/(:num)', 'User::edit/$1');
+$routes->post('/dashboard/users/update/(:num)', 'User::update/$1');
+$routes->get('/dashboard/users/destroy/(:num)', 'User::destroy/$1');
+
 
 
 /*
