@@ -126,7 +126,9 @@ class Member extends BaseController
         $isFileUploaded = false;
       } elseif ($uploadedFile->getError() != 4) {
         $isFileUploaded = true;
-        unlink('image/member/'. $member['image']);
+        if ($member['image'] != 'empty_image.jpg') {
+          unlink('image/member/'. $member['image']);
+        }
         $uploadedFile->move('image/member/');
       }
 

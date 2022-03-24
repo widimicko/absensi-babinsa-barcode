@@ -23,22 +23,5 @@
         $('#analogClock').thooClock();
       }
     </script>
-    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
-    <script>
-      function onScanSuccess(decodedText, decodedResult) {
-        console.log(`Code matched = ${decodedText}`, decodedResult);
-        const credentialInput = document.getElementById('credentialInput')
-
-        credentialInput.value = decodedText
-      }
-
-      if(document.getElementById('scanner')) {
-        let html5QrcodeScanner = new Html5QrcodeScanner(
-          "scanner",
-          { fps: 10, qrbox: {width: 250, height: 250} },
-          /* verbose= */ false);
-        html5QrcodeScanner.render(onScanSuccess);
-      }
-    </script>
   </body>
 </html>

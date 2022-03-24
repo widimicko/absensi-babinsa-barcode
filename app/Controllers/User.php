@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
-use Dompdf\Dompdf;
-
 use App\Models\UserModel;
 use App\Controllers\Auth;
 

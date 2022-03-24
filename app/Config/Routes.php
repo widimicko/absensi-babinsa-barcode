@@ -31,13 +31,13 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+// ! ============= Home ============
 $routes->get('/', 'Home::index');
 $routes->get('/absence/in', 'Home::in');
 $routes->get('/absence/out', 'Home::out');
-$routes->post('/absence/in', 'Home::absenceIn');
-$routes->post('/absence/out', 'Home::absenceOut');
+$routes->post('/absence/(:any)', 'Home::absence/$1');
 
-
+// ! ============= Authentication ============
 $routes->get('/login', 'Auth::login');
 $routes->post('/login', 'Auth::authenticate');
 $routes->get('/logout', 'Auth::logout');
@@ -61,11 +61,6 @@ $routes->get('/dashboard/users/destroy/(:num)', 'User::destroy/$1');
 
 // ! ============= Absence Resource ============
 $routes->get('/dashboard/absences', 'Absence::index');
-// $routes->get('/dashboard/absences/create', 'Absence:create');
-// $routes->post('/dashboard/absences/store', 'Absence:store');
-// $routes->get('/dashboard/absences/edit/(:num)', 'Absence:edit/$1');
-// $routes->post('/dashboard/absences/update/(:num)', 'Absence:update/$1');
-// $routes->get('/dashboard/absences/destroy/(:num)', 'Absence:destroy/$1');
 
 
 

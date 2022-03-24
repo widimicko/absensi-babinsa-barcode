@@ -25,7 +25,7 @@ class Absences extends Migration
                 'constraint' => 255,
             ],
             'date' => [
-                'type' => 'date',
+                'type' => 'date'
             ],
             'created_at' => [
 				'type' => 'DATETIME',

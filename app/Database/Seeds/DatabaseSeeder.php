@@ -10,7 +10,7 @@ class DatabaseSeeder extends Seeder
     {     
       $this->call('UserSeeder');
       $this->call('MemberSeeder');
-      $this->call('AbsenceSeeder');
+      // $this->call('AbsenceSeeder');
     }
 }
 

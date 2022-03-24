@@ -15,7 +15,7 @@ class AbsenceModel extends Model
     $builder->select(
       'absences.id as id, members.id as member_id, 
       members.name as name, members.rank as rank, members.birthdate as birthdate,
-      absences.absence as absence, absences.date as date,absences.created_at as created_at, absences.updated_at as updated_at');
+      absences.absence as absence,absences.created_at as created_at, absences.updated_at as updated_at');
     $builder->join('members', 'members.id = absences.member_id');
     $builder->orderby('created_at', 'DESC');
     $query = $builder->get();
@@ -23,17 +23,33 @@ class AbsenceModel extends Model
     return $query->getResultArray();
   }
 
-  public function getFilteredAbsences($absence, $created_at, $member_id) {
+  public function getFilteredAbsences($absence, $created_at, $member_id, $start, $end) {
     $builder = $this->builder();
     $builder->select(
       'absences.id as id, members.id as member_id, 
       members.name as name, members.rank as rank, members.birthdate as birthdate,
-      absences.absence as absence, absences.date as date,absences.created_at as created_at, absences.updated_at as updated_at');
+      absences.absence as absence,absences.created_at as created_at, absences.updated_at as updated_at');
     $builder->join('members', 'members.id = absences.member_id');
     $builder->where('absences.absence', $absence);
     $builder->where('absences.created_at', $created_at);
     $builder->where('members.id', $member_id);
     $builder->orderby('created_at', 'DESC');
+    $query = $builder->get();
+
+    return $query->getResultArray();
+  }
+
+  public function getLastFiveAbsence($date, $absence) {
+    $builder = $this->builder();
+    $builder->select(
+      'absences.id as id, members.id as member_id, 
+      members.name as name, members.image as image, members.rank as rank, members.birthdate as birthdate,
+      absences.absence as absence,absences.created_at as created_at, absences.updated_at as updated_at');
+    $builder->join('members', 'members.id = absences.member_id');
+    $builder->orderby('created_at', 'DESC');
+    $builder->where('absences.date', $date);
+    $builder->where('absences.absence', $absence);
+    $builder->limit(5);
     $query = $builder->get();
 
     return $query->getResultArray();
