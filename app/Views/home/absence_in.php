@@ -36,8 +36,8 @@
                 <?= $message ?>
             </div>
           <?php endif ?>
-          <form action="<?= base_url('/absence/Masuk') ?>" method="POST">
-            <input type="text" name="credential" id="credentialInput" class="form-control mb-3" placeholder="Scan barcode" autofocus>
+          <form id="absenceForm" action="<?= base_url('/absence/Masuk') ?>" method="POST">
+            <input type="text" name="credential" id="credentialInput" class="form-control mb-3" value="Scan barcode" placeholder="Scan barcode" autofocus>
             <button type="submit" class="btn btn-primary" id="sumbitAbsence">Absen</button>
           </form>
           <a href="<?= base_url('/') ?>" class="text-center"><i class="bi bi-arrow-left"></i> Kembali ke Home</a>
@@ -88,8 +88,22 @@
 
 <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 <script>
+  const credentialInput = document.getElementById('credentialInput')
+  const sumbitAbsence = document.getElementById('sumbitAbsence')
+  const absenceForm = document.getElementById('absenceForm')
+
+  credentialInput.addEventListener('change', (e) => {
+    e.preventDefault()
+
+    if (e.target.value.length <= 31) {
+      return 0;
+    }
+    
+    absenceForm.submit()
+  })
   function onScanSuccess(decodedText, decodedResult) {
     credentialInput.value = decodedText
+    absenceForm.submit()
   }
 
   let html5QrcodeScanner = new Html5QrcodeScanner("scanner", { 
