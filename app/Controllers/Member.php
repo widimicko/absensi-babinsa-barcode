@@ -49,13 +49,13 @@ class Member extends BaseController
       $options->setChroot(FCPATH);
 
       // Set True for Debugging Mode
-      // $options->setDebugCss(true);
-      // $options->setDebugLayout(true);
-      // $options->setDebugLayoutBlocks(true);
-      // $options->setDebugLayoutInline(true);
-      // $options->setDebugLayoutLines(true);
-      // $options->setDebugLayoutPaddingBox(true);
-      // $options->setDebugPng(true);
+      $options->setDebugCss(true);
+      $options->setDebugLayout(true);
+      $options->setDebugLayoutBlocks(true);
+      $options->setDebugLayoutInline(true);
+      $options->setDebugLayoutLines(true);
+      $options->setDebugLayoutPaddingBox(true);
+      $options->setDebugPng(true);
 
       $dompdf->setOptions($options);
 
@@ -63,7 +63,7 @@ class Member extends BaseController
         'member' => $member
       ]));
 
-      $dompdf->setPaper('A5', 'potrait');
+      $dompdf->setPaper('A7', 'landscape');
 
       $dompdf->render();
 
