@@ -61,6 +61,7 @@ $routes->get('/dashboard/users/destroy/(:num)', 'User::destroy/$1');
 
 // ! ============= Absence Resource ============
 $routes->get('/dashboard/absences', 'Absence::index');
+$routes->post('/dashboard/absences/filter', 'Absence::filter');
 
 
 

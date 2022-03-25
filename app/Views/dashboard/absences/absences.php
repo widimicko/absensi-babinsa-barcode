@@ -29,8 +29,40 @@
   <?php endif ?>
 
   <div class="card rounded shadow p-4">
+    <div class="row justify-content-between g-2 align-items-center">
+      <div class="col-md-10">
+        <form action="<?= base_url('/dashboard/absences/filter') ?>" method="post" class="row g-2 align-items-center">
+          <?= csrf_field() ?>
+          <div class="col-md-2">
+            <select name="member_id" class="form-select" id="select2">
+              <option value="">Anggota</option>
+              <?php foreach ($members as $member) : ?>
+                <option value="<?= $member['id'] ?>"><?= $member['name'] ?></option>
+              <?php endforeach ?>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <select name="absence" class="form-select">
+              <option value="">Absensi</option>
+              <option value="Masuk">Masuk</option>
+              <option value="Pulang">Pulang</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <input type="date" name="start" class="form-control" value="<?= date('Y-m-d') ?>">
+          </div>
+          <div class="col-md-3">
+            <input type="date" name="end" class="form-control" value="<?= date('Y-m-d') ?>">
+          </div>
+          <div class="col-md-2">
+            <button type="submit" class="btn text-white" style="background-color: purple;">Filter <i class="bi bi-filter"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <hr>
     <div class="table-responsive">
-      <table class="table table-striped table-hover" id="dataTable">
+      <table class="table table-bordered table-striped table-hover" id="dataTable">
         <thead>
           <tr>
             <th scope="col">#</th>

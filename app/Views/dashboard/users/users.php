@@ -31,7 +31,7 @@
   <div class="card rounded shadow p-4">
     <div class="table-responsive">
       <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#createModal"><i class="bi bi-plus"></i> Tambah</button>
-      <table class="table table-striped table-hover" id="dataTable">
+      <table class="table table-bordered table-striped table-hover" id="dataTable">
         <thead>
           <tr>
             <th scope="col">#</th>

@@ -19,7 +19,7 @@
   <div class="card rounded shadow p-4">
     <div class="table-responsive">
       <a href="/dashboard/members/create" class="btn btn-primary mb-3"><i class="bi bi-plus"></i> Tambah</a>
-      <table class="table table-striped table-hover" id="dataTable">
+      <table class="table table-bordered table-striped table-hover" id="dataTable">
         <thead>
           <tr>
             <th scope="col">#</th>
