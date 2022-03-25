@@ -44,6 +44,9 @@ $routes->get('/logout', 'Auth::logout');
 
 $routes->get('/dashboard', 'Dashboard::index');
 
+$routes->get('/dashboard/change-password', 'Dashboard::showChangePassword');
+$routes->post('/dashboard/change-password', 'Dashboard::updatePassword');
+
 // ! ============= Member Resource ============
 $routes->get('/dashboard/members', 'Member::index');
 $routes->get('/dashboard/members/create', 'Member::create');

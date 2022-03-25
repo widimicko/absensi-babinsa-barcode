@@ -16,6 +16,14 @@ class Auth extends BaseController
       return $this->session->has('isLogin');
     }
 
+    public function getloginUser() {
+      return [
+        'user_id' => $this->session->get('user_id'),
+        'email' => $this->session->get('email'),
+        'name' => $this->session->get('name'),
+      ];
+    }
+
     public function login()
     {
       $isLogin = $this->isLogin();
@@ -40,6 +48,7 @@ class Auth extends BaseController
         } else {
           $loginSession = [
             'isLogin' => true,
+            'user_id' => $user['id'],
             'email' => $user['email'],
             'name' => $user['name'],
           ];

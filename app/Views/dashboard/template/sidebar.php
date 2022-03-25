@@ -28,6 +28,11 @@
           <i class="bi bi-people"></i> Pengguna
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= base_url('/dashboard/change-password') ?>">
+          <i class="bi bi-key"></i> Ganti Password
+        </a>
+      </li>
     </ul>
   </div>
 </nav>
