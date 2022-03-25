@@ -2,7 +2,7 @@
   <div class="position-sticky pt-3">
     <ul class="nav flex-column gap-3">
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<?= base_url('/dashboard') ?>">
           <i class="bi bi-grid-fill"></i> Dashboard
         </a>
       </li>

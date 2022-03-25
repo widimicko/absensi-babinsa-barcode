@@ -25,7 +25,21 @@ class Member extends BaseController
       ]);
     }
 
+    public function show($id) {
+      if(!$this->auth->isLogin()){
+        return redirect()->to('/login');
+      }
+
+      return view('dashboard/members/detail', [
+        'member' => $this->memberModel->find($id)
+      ]);
+    }
+
     public function print($id) {
+      if(!$this->auth->isLogin()){
+        return redirect()->to('/login');
+      }
+
       $member = $this->memberModel->find($id);
       $dompdf = new Dompdf();
       // set options to dompdf

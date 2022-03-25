@@ -42,12 +42,13 @@ $routes->get('/login', 'Auth::login');
 $routes->post('/login', 'Auth::authenticate');
 $routes->get('/logout', 'Auth::logout');
 
-$routes->get('/dashboard', 'Member::index');
+$routes->get('/dashboard', 'Dashboard::index');
 
 // ! ============= Member Resource ============
 $routes->get('/dashboard/members', 'Member::index');
 $routes->get('/dashboard/members/create', 'Member::create');
 $routes->post('/dashboard/members/store', 'Member::store');
+$routes->get('/dashboard/members/show/(:num)', 'Member::show/$1');
 $routes->get('/dashboard/members/print/(:num)', 'Member::print/$1');
 $routes->get('/dashboard/members/edit/(:num)', 'Member::edit/$1');
 $routes->post('/dashboard/members/update/(:num)', 'Member::update/$1');
