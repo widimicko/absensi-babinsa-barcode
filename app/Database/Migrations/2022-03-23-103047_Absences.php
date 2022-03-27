@@ -24,6 +24,14 @@ class Absences extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
+            'description' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
+            'attachment' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
             'date' => [
                 'type' => 'date'
             ],

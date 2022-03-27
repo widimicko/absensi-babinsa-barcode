@@ -1,7 +1,4 @@
 TODO:
-
- - fix member card view, make print all
- - absences report & filter
- - api to absences
-
- 
+ - fix member card view
+ - absences report
+ - report crud

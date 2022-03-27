@@ -24,6 +24,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nama</th>
+            <th scope="col">NRP</th>
             <th scope="col">Foto</th>
             <th scope="col">Pangkat</th>
             <th scope="col">Tanggal Lahir</th>
@@ -38,6 +39,7 @@
             <tr>
               <td><?= $iteration++ ?></td>
               <td><?= $member['name'] ?></td>
+              <td><?= $member['nrp'] ?></td>
               <td>
                 <img src="<?= base_url('image/member/'. $member['image']) ?>" height="100px" alt="">
               </td>

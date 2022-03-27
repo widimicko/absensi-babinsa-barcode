@@ -28,6 +28,13 @@
           </div>
         </div>
         <div class="mb-3">
+          <label class="form-label">NRP</label>
+          <input required type="number" name="nrp" class="form-control" value="<?= old('nrp', $member['nrp']) ?>">
+          <div class="invalid-feedback">
+            <?= session('errors.nrp') ?>
+          </div>
+        </div>
+        <div class="mb-3">
           <label class="form-label">Foto</label>
           <img src="<?= base_url('image/member/'. $member['image']) ?>" class="img-preview d-block img-fluid mb-3 col-sm-5">
           <input type="file" name="image" id="image" class="form-control" accept="image/*" onchange="previewImage()">

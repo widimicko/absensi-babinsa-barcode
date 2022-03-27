@@ -13,7 +13,7 @@
         </div>
         <div class="bg-primary-green text-white p-3">
           <p class="fs-3" id="liveClock"></p>
-          <p><?= date('l, d M Y') ?></p>
+          <p class="fs-4"><?= date('l, d M Y') ?></p>
         </div>
       </div>
     </div>
@@ -45,12 +45,12 @@
       </div>
       <div class="row mt-4 gap-2 justify-content-center">
         <div class="col-5 bg-success text-white p-3">
-          <p>Masuk</p>
-          <p><?= count($membersIn) ?></p>
+          <p class="fs-4">Masuk</p>
+          <p class="fs-4"><?= count($membersIn) ?></p>
         </div>
         <div class="col-5 bg-danger text-white p-3">
-          <p>Tidak Masuk</p>
-          <p><?= count($members) - count($membersIn) ?></p>
+          <p class="fs-4">Tidak Masuk</p>
+          <p class="fs-4"><?= count($members) - count($membersIn) ?></p>
         </div>
       </div>
     </div>

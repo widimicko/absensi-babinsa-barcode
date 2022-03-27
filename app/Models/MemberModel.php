@@ -8,5 +8,5 @@ class MemberModel extends Model
 {
     protected $table = "members";
     protected $useTimestamps = true;
-    protected $allowedFields = ['name', 'image', 'rank', 'birthdate', 'credential'];
+    protected $allowedFields = ['name', 'nrp', 'image', 'rank', 'birthdate', 'credential'];
 }

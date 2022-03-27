@@ -85,6 +85,7 @@ class Member extends BaseController
 
       if(!$this->validate([
         'name' => 'required',
+        'nrp' => 'required',
         'image' => 'is_image[image]|mime_in[image,image/jpg,image/jpeg,image/png]',
         'birthdate' => 'required',
         'rank' => 'required',
@@ -97,6 +98,7 @@ class Member extends BaseController
 
       $this->memberModel->insert([
         'name' => $this->request->getVar('name'),
+        'nrp' => $this->request->getVar('nrp'),
         'rank' => $this->request->getVar('rank'),
         'birthdate' => $this->request->getVar('birthdate'),
         'image' => $uploadedFile->getClientName(),
@@ -124,6 +126,7 @@ class Member extends BaseController
 
       if(!$this->validate([
         'name' => 'required',
+        'nrp' => 'required',
         'image' => 'is_image[image]|mime_in[image,image/jpg,image/jpeg,image/png]',
         'birthdate' => 'required',
         'rank' => 'required',
@@ -148,6 +151,7 @@ class Member extends BaseController
 
       $this->memberModel->update($id, [
         'name' => $this->request->getVar('name'),
+        'nrp' => $this->request->getVar('nrp'),
         'rank' => $this->request->getVar('rank'),
         'birthdate' => $this->request->getVar('birthdate'),
         'image' => $isFileUploaded ? $uploadedFile->getClientName() : $member['image']

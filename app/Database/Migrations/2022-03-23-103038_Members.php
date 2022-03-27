@@ -15,6 +15,10 @@ class Members extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
+            'nrp' => [
+                'type' => 'INT',
+                'constraint' => 20,
+            ],
             'name' => [
                 'type' => 'VARCHAR',
                 'constraint' => 255,

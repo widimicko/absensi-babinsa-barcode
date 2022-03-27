@@ -28,9 +28,9 @@
   </div>
   <div data-aos="fade-up" class="my-5 bg-primary-green text-white p-3">
     <div class="text-center">
-      <p id="liveClock"></p>
-      <p><?= date('l, d M Y') ?></p>
-      <p>Sistem Absensi Babinsa Berbasis Web Menggunakan Barcode</p>
+      <p class="fs-3" id="liveClock"></p>
+      <p class="fs-3"><?= date('l, d M Y') ?></p>
+      <p class="fs-3">Sistem Absensi Babinsa Berbasis Web Menggunakan Barcode</p>
     </div>
   </div>
 </div>

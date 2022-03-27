@@ -12,6 +12,7 @@ class MemberSeeder extends Seeder
           [
             'name' => 'Member 1',
             'image' => 'empty_image.jpg',
+            'nrp' => 12345678901,
             'rank' => 'Sersan',
             'credential' => md5(uniqid(rand(), true)),
             'birthdate' => date('Y-m-d'),
@@ -21,6 +22,7 @@ class MemberSeeder extends Seeder
           [
             'name' => 'Member 2',
             'image' => 'empty_image.jpg',
+            'nrp' => 12345678901,
             'rank' => 'Sersan',
             'credential' => md5(uniqid(rand(), true)),
             'birthdate' => date('Y-m-d'),
@@ -30,6 +32,7 @@ class MemberSeeder extends Seeder
           [
             'name' => 'Member 3',
             'image' => 'empty_image.jpg',
+            'nrp' => 12345678901,
             'rank' => 'Sersan',
             'credential' => md5(uniqid(rand(), true)),
             'birthdate' => date('Y-m-d'),
@@ -39,6 +42,7 @@ class MemberSeeder extends Seeder
           [
             'name' => 'Member 4',
             'image' => 'empty_image.jpg',
+            'nrp' => 12345678901,
             'rank' => 'Sersan',
             'credential' => md5(uniqid(rand(), true)),
             'birthdate' => date('Y-m-d'),
@@ -48,6 +52,7 @@ class MemberSeeder extends Seeder
           [
             'name' => 'Member 5',
             'image' => 'empty_image.jpg',
+            'nrp' => 12345678901,
             'rank' => 'Sersan',
             'credential' => md5(uniqid(rand(), true)),
             'birthdate' => date('Y-m-d'),
