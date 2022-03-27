@@ -6,7 +6,7 @@
   <main class="form-signin text-center">
     <form action="<?= base_url('/login') ?>" method="post">
       <img class="mb-4" src="<?= base_url('image/logo_tniad.png') ?>" alt="" width="72" height="100">
-      <h1 class="h3 mb-3 fw-normal">Sistem Absensi Koramil 0827/18 Kangean</h1>
+      <h1 class="h1 mb-3 fw-normal">Sistem Absensi Koramil 0827/18 Kangean</h1>
 
       <?php if($message = session()->getFlashData('failed')) : ?>
         <div class="alert alert-danger" role="alert">
@@ -24,9 +24,10 @@
       </div>
 
       <button class="w-100 btn btn-lg btn-success" type="submit">Masuk</button>
-      <p class="mt-5 mb-3 text-muted">copyright &copy; <?= date('Y') ?></p>
+      <p class="mt-5 fs-5 mb-3 text-muted">Copyright &copy; <?= date('Y') ?></p>
     </form>
   </main>
 </div>
+<div class="bg-primary-green" style="height: 120px;"></div>
 
 <?= $this->endSection() ?>

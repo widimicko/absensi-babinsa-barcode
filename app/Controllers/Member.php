@@ -16,6 +16,7 @@ class Member extends BaseController
     }
 
     public function index() {
+
       if(!$this->auth->isLogin()){
         return redirect()->to('/login');
       }
@@ -49,13 +50,13 @@ class Member extends BaseController
       $options->setChroot(FCPATH);
 
       // Set True for Debugging Mode
-      $options->setDebugCss(true);
-      $options->setDebugLayout(true);
-      $options->setDebugLayoutBlocks(true);
-      $options->setDebugLayoutInline(true);
-      $options->setDebugLayoutLines(true);
-      $options->setDebugLayoutPaddingBox(true);
-      $options->setDebugPng(true);
+      // $options->setDebugCss(true);
+      // $options->setDebugLayout(true);
+      // $options->setDebugLayoutBlocks(true);
+      // $options->setDebugLayoutInline(true);
+      // $options->setDebugLayoutLines(true);
+      // $options->setDebugLayoutPaddingBox(true);
+      // $options->setDebugPng(true);
 
       $dompdf->setOptions($options);
 

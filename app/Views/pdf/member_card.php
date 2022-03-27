@@ -12,6 +12,16 @@
       margin: 0;
       box-sizing: border-box;
     }
+
+    .screen {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        background-image: url('member_card/bg_member_card.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
     .content {
       height: 100%;
       width: 100%;
@@ -20,54 +30,44 @@
     .page-break {
       page-break-before: always;
     }
-    .text-center {
-      text-align: center;
-    }
-    .content-center {
-      margin: 0 auto;
-      width: 50%;
-    }
     .barcode-container {
       position: absolute;
-      left: 10px;
-      top: 10px;
+      right: 70px;
+      top: 70px;
     }
 
     .image-container {
       position: absolute;
-      right: 10px;
+      left: 10px;
       bottom: 10px;
     }
 
-    .card-title-container {
-      position: absolute;
-      right: 10px;
-      top: 10px;
+    .text-white {
+      color: white;
     }
 
     .name-container {
       position: absolute;
-      left: 10px;
+      left: 140px;
       bottom: 10px;
     }
   </style>
 </head>
 <body>
-  <div class="content">
-    <div class="barcode-container">
-      <?php echo '<img src="'.(new QRCode)->render($member['credential']).'" style="height: 120px; width: 120px;" alt="QR Code" />'; ?>
-    </div>
-    <div class="card-title-container text-center">
-      <p>Kartu Anggota</p>
-      <p>Koramil 0827/18 Kangean</p>
-    </div>
-    <div class="bottom-container">
-      <div class="name-container">
-        <p><?= $member['name'] ?></p>
-        <p><?= $member['rank'] ?></p>
+  <div class="screen">
+    <div class="content">
+      <div class="barcode-container">
+        <?php echo '<img src="'.(new QRCode)->render($member['credential']).'" style="height: 120px; width: 120px;" alt="QR Code" />'; ?>
       </div>
-      <div class="image-container">
-        <img src="image/member/<?= $member['image'] ?>" style="height: 120px; width: 120px;"><br>
+      <div class="bottom-container">
+        <div class="image-container">
+          <img src="image/member/<?= $member['image'] ?>" style="height: 120px; width: 120px;"><br>
+        </div>
+        <div class="name-container">
+          <p class="text-white"><?= $member['name'] ?></p>
+          <p class="text-white"><?= $member['nrp'] ?></p>
+          <p class="text-white"><?= $member['rank'] ?></p>
+        </div>
       </div>
     </div>
   </div>
