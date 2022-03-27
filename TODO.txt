@@ -1,4 +1,10 @@
 TODO:
- - fix member card view
  - absences report
- - report crud
+
+Diagrams
+  - Login
+  - ganti password
+  - kelola pengguna
+  - kelola anggota
+  - kelola absensi
+  - absen
