@@ -62,6 +62,8 @@ class Home extends BaseController
             'member_id' => $member['id'],
             'absence' => $absence,
             'date' => date('Y-m-d'),
+            'description' => '',
+            'image' => ''
         ]);
 
         if ($absence == 'Masuk') {

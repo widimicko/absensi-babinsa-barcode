@@ -62,6 +62,7 @@
     </div>
     <hr>
     <div class="table-responsive">
+      <a href="/dashboard/absences/create" class="btn btn-primary mb-3"><i class="bi bi-plus"></i> Tambah</a>
       <table class="table table-bordered table-striped table-hover" id="dataTable">
         <thead>
           <tr>
@@ -70,6 +71,7 @@
             <th scope="col">Pangkat</th>
             <th scope="col">Absen</th>
             <th scope="col">Ditambahkan Pada</th>
+            <th scope="col">Aksi</th>
           </tr>
         </thead>
         <tbody>
@@ -81,6 +83,10 @@
               <td><?= $absence['rank'] ?></td>
               <td><?= $absence['absence'] ?></td>
               <td><?= $absence['created_at'] ?></td>
+              <td>
+                <a href="<?= base_url('/dashboard/absences/edit/'. $absence['id']) ?>" class="btn btn-warning text-white"><i class="bi bi-pencil"></i> Ubah</a>
+                <a href="<?= base_url('/dashboard/absences/destroy/'. $absence['id']) ?>" class="btn btn-danger text-white"><i class="bi bi-trash"></i> Hapus</a>
+              </td>
             </tr>
           <?php endforeach; ?>
         </tbody>

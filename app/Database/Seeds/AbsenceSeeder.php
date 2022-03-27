@@ -13,6 +13,8 @@ class AbsenceSeeder extends Seeder
             'member_id' => rand(1, 5),
             'absence' => 'Masuk',
             'date' => date('Y-m-d'),
+            'description' => '',
+            'image' => '',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
           ],
@@ -20,6 +22,8 @@ class AbsenceSeeder extends Seeder
             'member_id' => rand(1, 5),
             'absence' => 'Masuk',
             'date' => date('Y-m-d'),
+            'description' => '',
+            'image' => '',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
           ],
@@ -27,6 +31,8 @@ class AbsenceSeeder extends Seeder
             'member_id' => rand(1, 5),
             'absence' => 'Masuk',
             'date' => date('Y-m-d'),
+            'description' => '',
+            'image' => '',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
           ],
@@ -34,6 +40,8 @@ class AbsenceSeeder extends Seeder
             'member_id' => rand(1, 5),
             'absence' => 'Masuk',
             'date' => date('Y-m-d'),
+            'description' => '',
+            'image' => '',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
           ],
@@ -41,6 +49,8 @@ class AbsenceSeeder extends Seeder
             'member_id' => rand(1, 5),
             'absence' => 'Masuk',
             'date' => date('Y-m-d'),
+            'description' => '',
+            'image' => '',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
           ],
@@ -48,6 +58,8 @@ class AbsenceSeeder extends Seeder
             'member_id' => rand(1, 5),
             'absence' => 'Masuk',
             'date' => date('Y-m-d'),
+            'description' => '',
+            'image' => '',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
           ],
@@ -55,6 +67,8 @@ class AbsenceSeeder extends Seeder
             'member_id' => rand(1, 5),
             'absence' => 'Masuk',
             'date' => date('Y-m-d'),
+            'description' => '',
+            'image' => '',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
           ],
@@ -62,6 +76,8 @@ class AbsenceSeeder extends Seeder
             'member_id' => rand(1, 5),
             'absence' => 'Masuk',
             'date' => date('Y-m-d'),
+            'description' => '',
+            'image' => '',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
           ],
@@ -69,6 +85,8 @@ class AbsenceSeeder extends Seeder
             'member_id' => rand(1, 5),
             'absence' => 'Masuk',
             'date' => date('Y-m-d'),
+            'description' => '',
+            'image' => '',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
           ],
@@ -76,6 +94,8 @@ class AbsenceSeeder extends Seeder
             'member_id' => rand(1, 5),
             'absence' => 'Masuk',
             'date' => date('Y-m-d'),
+            'description' => '',
+            'image' => '',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
           ],
@@ -83,6 +103,8 @@ class AbsenceSeeder extends Seeder
             'member_id' => rand(1, 5),
             'absence' => 'Masuk',
             'date' => date('Y-m-d'),
+            'description' => '',
+            'image' => '',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
           ],
@@ -90,6 +112,8 @@ class AbsenceSeeder extends Seeder
             'member_id' => rand(1, 5),
             'absence' => 'Masuk',
             'date' => date('Y-m-d'),
+            'description' => '',
+            'image' => '',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s')
           ],

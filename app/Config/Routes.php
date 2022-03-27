@@ -51,7 +51,6 @@ $routes->post('/dashboard/change-password', 'Dashboard::updatePassword');
 $routes->get('/dashboard/members', 'Member::index');
 $routes->get('/dashboard/members/create', 'Member::create');
 $routes->post('/dashboard/members/store', 'Member::store');
-$routes->get('/dashboard/members/show/(:num)', 'Member::show/$1');
 $routes->get('/dashboard/members/print/(:num)', 'Member::print/$1');
 $routes->get('/dashboard/members/edit/(:num)', 'Member::edit/$1');
 $routes->post('/dashboard/members/update/(:num)', 'Member::update/$1');
@@ -66,6 +65,12 @@ $routes->get('/dashboard/users/destroy/(:num)', 'User::destroy/$1');
 // ! ============= Absence Resource ============
 $routes->get('/dashboard/absences', 'Absence::index');
 $routes->post('/dashboard/absences/filter', 'Absence::filter');
+$routes->get('/dashboard/absences/create', 'Absence::create');
+$routes->post('/dashboard/absences/store', 'Absence::store');
+$routes->get('/dashboard/absences/print/(:num)', 'Absence::print/$1');
+$routes->get('/dashboard/absences/edit/(:num)', 'Absence::edit/$1');
+$routes->post('/dashboard/absences/update/(:num)', 'Absence::update/$1');
+$routes->get('/dashboard/absences/destroy/(:num)', 'Absence::destroy/$1');
 
 
 

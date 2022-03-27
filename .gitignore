@@ -125,5 +125,6 @@ nb-configuration.xml
 /phpunit*.xml
 /.phpunit.*.cache
 
-public/image/member/*
-TODO.txt
+/public/image/member/*
+/public/image/absence/*
+/TODO.txt

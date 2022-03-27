@@ -8,7 +8,7 @@ class AbsenceModel extends Model
 {
   protected $table = "absences";
   protected $useTimestamps = true;
-  protected $allowedFields = ['member_id', 'absence', 'date'];
+  protected $allowedFields = ['member_id', 'absence', 'date', 'description', 'image'];
 
   public function getAbsences() {
     $builder = $this->builder();
