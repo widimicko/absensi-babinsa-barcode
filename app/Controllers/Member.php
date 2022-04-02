@@ -103,7 +103,7 @@ class Member extends BaseController
         'rank' => $this->request->getVar('rank'),
         'birthdate' => $this->request->getVar('birthdate'),
         'image' => $uploadedFile->getClientName(),
-        'credential' => md5(uniqid(rand(), true)),
+        'credential' => sha1(uniqid(rand(), true), true),
       ]);
 
       return redirect()->to('/dashboard/members')->with('success', 'Data anggota baru berhasil ditambahkan');
