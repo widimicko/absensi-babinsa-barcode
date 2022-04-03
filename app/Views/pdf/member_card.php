@@ -73,7 +73,6 @@
   <div class="screen">
     <div class="content">
       <div class="logo-container">
-        <!-- <div style="background-image: url('image/logo_tniad.png'); background-size:cover; height: 100px; width: 50px;"></div> -->
         <img src="image/logo_tniad.png" alt="TNI AD" style="width: 80px; height: 120px;">
       </div>
       <div class="title-container text-center">
